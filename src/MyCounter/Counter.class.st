@@ -26,3 +26,13 @@ Counter >> count: val [
 	"set the instance variable's value"
 	count:=val
 ]
+
+{ #category : #operations }
+Counter >> decrement [
+	count := count - 1
+]
+
+{ #category : #operations }
+Counter >> increment [
+	count := count + 1
+]
