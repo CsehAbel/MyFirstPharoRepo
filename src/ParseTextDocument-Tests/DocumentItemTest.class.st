@@ -17,6 +17,23 @@ DocumentItemTest >> testListItem [
 ]
 
 { #category : #tests }
+DocumentItemTest >> testParsing [
+	| pwd path rs line |
+	pwd:=FileSystem disk workingDirectory.
+	path:=pwd / 'documentToParse.txt'.
+	rs:=path readStream.
+	line:=rs nextLine.
+	self assert: (Parse instantiateAccording: line) class = TitleItem.
+	self halt.
+	line:=rs nextLine.
+	self assert: (Parse instantiateAccording: line) class = ListItem.
+	self halt.
+	line:=rs nextLine.
+	self assert: (Parse instantiateAccording: line) class = SubListItem.
+	self halt
+]
+
+{ #category : #tests }
 DocumentItemTest >> testSubListItem [
 
 	self assert: (SubListItem canParse: '--s').

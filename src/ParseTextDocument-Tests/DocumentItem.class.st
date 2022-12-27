@@ -1,7 +1,7 @@
 Class {
 	#name : #DocumentItem,
 	#superclass : #Object,
-	#category : #'ParseTextDocument-Tests-ParseTextDocument-Tests'
+	#category : #'ParseTextDocument-Tests'
 }
 
 { #category : #testing }
