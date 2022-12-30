@@ -14,5 +14,5 @@ Parse class >> documentClasses [
 
 { #category : #instantiation }
 Parse class >> instantiateAccording: aString [ 
-	(self documentClasses) detect: [ :each | each canParse: aString ] ifFound: [ :each | ^each newFromLine: aString ]
+	(self documentClasses) do: [ :each | (each canParse: aString) ifTrue: [^each newFromLine: aString]]
 ]
